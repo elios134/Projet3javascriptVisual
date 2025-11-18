@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>War of Lutin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <!-- MENU RPG -->
+    <div id="menu-screen" class="menu-screen">
+        <div class="menu-panel">
+            <h1 class="menu-title">War of Lutin</h1>
+            <p className="menu-subtitle">Un RPG tactique du royaume d'ARTIFLETTE</p>
+            <p class="menu-text">
+                Incarne le <span class="fire-text">Guerrier de feu</span> et défie le
+                <span class="lutin-text">Sombre Lutin</span> dans un duel au tour par tour.
+            </p>
+            <button id="start-btn" class="menu-btn">Nouvelle partie</button>
+            <p class="menu-small">Astuce : choisis bien tes attaques, la chance n'est pas toujours de ton côté...</p>
+        </div>
+    </div>
+
+    <!-- JEU (caché au début) -->
+    <main id="game-wrapper" class="game-wrapper hidden">
+        <section class="game-header">
+            <div>
+                <h1>War of Lutin</h1>
+                <p class="subtitle">
+                    Combat entre <span class="fire-text">Guerrier de feu</span> et
+                    <span class="lutin-text">Sombre Lutin</span>
+                </p>
+            </div>
+        </section>
+        <div class="game-main">
+            <!-- Zone des personnages -->
+            <section class="fighters">
+                <div class="fighter-card fire-warrior">
+                    <img src="/assets/imgs/Guerrier-de-feu.png" alt="">
+                    <h2 class="fighter-name">Guerrier de feu</h2>
+                    <p class="fighter-role">Héros du royaume d'ARTIFLETTE</p>
+                    <div class="lifebar">
+                        <div class="lifebar-inner" id="warrior-life">50 PV</div>
+                    </div>
+                </div>
+
+                <div class="vs">VS</div>
+
+                <div class="fighter-card dark-lutin">
+                    <img src="/assets/imgs/sombre-lutin.png" alt="">
+                    <h2 class="fighter-name">Sombre Lutin</h2>
+                    <p class="fighter-role">Conquérant des royaumes</p>
+                    <div class="lifebar">
+                        <div class="lifebar-inner" id="lutin-life">50 PV</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Zone des attaques -->
+            <section class="attacks-panel">
+                <h3>Choisis ton attaque :</h3>
+                <div class="attacks-grid">
+                    <button class="attack-btn" data-atk="1">Frappe Rapide<br><span>10 dégâts — 1/2</span></button>
+                    <button class="attack-btn" data-atk="2">Soin Léger<br><span>+15 PV — 1/3</span></button>
+                    <button class="attack-btn" data-atk="3">Coup Puissant<br><span>20 dégâts — 1/3</span></button>
+                    <button class="attack-btn" data-atk="4">Frappe Dévastatrice<br><span>30 dégâts — 1/4</span></button>
+                    <button class="attack-btn" data-atk="5">Incinération Total!<br><span>50 dégâts — 1/5</span></button>
+                </div>
+
+                <!-- Bouton rejouer -->
+                <button id="retry-btn" class="retry-btn hidden">Rejouer</button>
+            </section>
+
+            <!-- Zone de log -->
+            <section class="log-panel">
+                <h3>Journal de combat</h3>
+                <div class="log-window"></div>
+            </section>
+        </div>
+        <divclass="game-footer">
+            <p>War of Lutin – Prototype RPG au tour par tour</p>
+            </div>
+    </main>
+    <!-- SONS  -->
+    <audio id="sfx-hit" src="/assets/sounds/hit.mp3" preload="auto"></audio>
+    <audio id="sfx-heal" src="/assets/sounds/heal.mp3" preload="auto"></audio>
+    <audio id="sfx-start" src="/assets/sounds/start.mp3" preload="auto"></audio>
+    <audio id="sfx-win" src="/assets/sounds/win.mp3" preload="auto"></audio>
+    <audio id="sfx-lose" src="/assets/sounds/lose.mp3" preload="auto"></audio>
+
+    <script src="/assets/script/script.js"></script>
+</body>
+
+</html>

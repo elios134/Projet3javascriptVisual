@@ -1,0 +1,444 @@
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-image: url(/assets/imgs/arena);
+    background-position: center;
+    background-size: cover;
+    color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MENU RPG */
+.menu-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assets/imgs/arena);
+    background-position: center;
+    background-size: cover;
+    padding: 16px;
+}
+
+.menu-panel {
+    background: rgba(10, 10, 20, 0.96);
+    border-radius: 22px;
+    padding: 24px 30px;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.menu-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 0 0 16px rgba(255, 0, 0, 0.849);
+}
+
+.menu-text {
+    font-size: 0.95rem;
+    color: #ddd;
+    margin-bottom: 18px;
+}
+
+.menu-small {
+    font-size: 0.78rem;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.menu-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ffb74d, #ff7043);
+    border: none;
+    border-radius: 14px;
+    color: #1b1b1b;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.8);
+}
+
+.menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.9);
+}
+
+.menu-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Conteneur principal du jeu */
+.game-wrapper {
+    width: 95%;
+    max-width: 1100px;
+    backdrop-filter: blur(50px);
+    border-radius: 20px;
+    padding: 24px 28px 18px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Header */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 2.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    text-shadow: 0 0 12px rgba(255, 0, 0, 0.849);
+}
+
+.subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.fire-text {
+    color: rgba(255, 0, 0, 0.849);
+    font-weight: 600;
+}
+
+.lutin-text {
+    color: #08500c;
+    font-weight: 600;
+}
+
+.fullscreen-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+/* Layout principal */
+.game-main {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "fighters attacks"
+        "log log";
+    gap: 18px;
+}
+
+/* Fighters */
+.fighters {
+    grid-area: fighters;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    position: relative;
+    overflow: hidden;
+}
+
+.fighter-card {
+    flex: 1;
+    background: rgba(13, 13, 20, 0.95);
+    border-radius: 16px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.fighter-name {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.fighter-role {
+    font-size: 0.8rem;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+.fire-warrior .fighter-name {
+    color: #ff8a65;
+}
+
+.dark-lutin .fighter-name {
+    color: #81c784;
+}
+
+/* VS */
+.vs {
+    align-self: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Barre de vie */
+.lifebar {
+    width: 100%;
+    height: 20px;
+    background: #2b2b36;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.lifebar-inner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1b1b1f;
+    transition: width 0.25s ease;
+}
+
+/* Couleurs PV */
+.fire-warrior .lifebar-inner {
+    background: linear-gradient(90deg, #ffcc80, #ff8a65);
+}
+
+.dark-lutin .lifebar-inner {
+    background: linear-gradient(90deg, #a5d6a7, #66bb6a);
+}
+
+/* Panel d’attaques */
+.attacks-panel {
+    grid-area: attacks;
+}
+
+.attacks-panel h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.attacks-grid {
+    display: grid;
+    grid-template-columns: 2fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.attack-btn {
+    background: #1b1b26;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 8px 10px;
+    color: #f5f5f5;
+    font-size: 0.85rem;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease, background 0.1s ease;
+}
+
+.attack-btn span {
+    display: block;
+    font-size: 0.7rem;
+    color: #b0b0b0;
+    margin-top: 2px;
+}
+
+.attack-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 215, 0, 0.7);
+    background: #232338;
+}
+
+.attack-btn:disabled {
+    cursor: default;
+}
+
+/* Log */
+.log-panel {
+    grid-area: log;
+    text-align: center;
+    background: rgba(13, 13, 20, 0.95);
+    border-radius: 16px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.log-panel h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.log-window {
+    background: #101018;
+    border-radius: 10px;
+    padding: 10px;
+    height: 160px;
+    overflow-y: auto;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.log-window p + p {
+    margin-top: 4px;
+}
+
+/* Bouton rejouer */
+.retry-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: #64ffda;
+    border: none;
+    color: #0b1a17;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.retry-btn:hover {
+    transform: scale(1.03);
+}
+
+/* Particules */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particle-rise 0.5s ease-out forwards;
+    opacity: 0.9;
+}
+
+.particle.fire {
+    background: #ffb74d;
+}
+
+.particle.shadow {
+    background: #81c784;
+}
+
+@keyframes particle-rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-25px) scale(0.4);
+        opacity: 0;
+    }
+}
+
+/* Animations coups */
+.hit-left {
+    animation: hit-left 0.3s ease;
+}
+
+.hit-right {
+    animation: hit-right 0.3s ease;
+}
+
+@keyframes hit-left {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes hit-right {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(10px); }
+    50% { transform: translateX(-6px); }
+    75% { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+}
+
+.damage-flash .lifebar-inner {
+    animation: damage-flash 0.4s ease;
+}
+
+@keyframes damage-flash {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.8); }
+    100% { filter: brightness(1); }
+}
+
+/* Animation soin */
+.heal-glow {
+    box-shadow: 0 0 20px rgba(129, 212, 250, 0.8);
+    animation: heal-glow 0.6s ease-out;
+}
+
+@keyframes heal-glow {
+    0% { box-shadow: 0 0 0 rgba(129, 212, 250, 0); }
+    50% { box-shadow: 0 0 20px rgba(129, 212, 250, 0.9); }
+    100% { box-shadow: 0 0 0 rgba(129, 212, 250, 0); }
+}
+
+/* Utils */
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+/* Responsive tablette <= 768px */
+@media screen and (max-width:768px) {
+    .game-main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "fighters"
+            "attacks"
+            "log";
+    }
+
+    .fighters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vs {
+        display: none;
+    }
+
+    .game-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
