@@ -67,7 +67,7 @@ let gameOver = false;
 function playSound(audio) {
     if (!audio) return;
     audio.currentTime = 0;
-    audio.play().catch(() => {}); // évite les erreurs si le navigateur bloque
+    audio.play()
 }
 
 // ======= FONCTION RANDOM POUR LE LUTIN =======
@@ -143,7 +143,7 @@ function addLog(text) {
 // ======= FIN DU JEU =======
 function checkEndGame() {
     if (warriorfire.lifepoint <= 0 && !gameOver) {
-        addLog("❌ TU AS PERDU !");
+        addLog("TU AS PERDU !");
         playSound(sfxLose);
         gameOver = true;
         disableButtons();
